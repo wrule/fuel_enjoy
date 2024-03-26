@@ -8,6 +8,7 @@ import {
 // You can also do command + space and the compiler will suggest the correct name.
 import { CounterContractAbi__factory  } from "./sway-api"
 import type { CounterContractAbi } from "./sway-api";
+import { PixelCanvas } from "./components/PixelCanvas";
 
 const CONTRACT_ID =
   "0x80edb0b8111d4236d269d0fd1950f432646dea2c8ea1d8535e3041cbb6bbb4e9";
@@ -92,6 +93,7 @@ export default function Home() {
           </button>
         )}
       </div>
+      <PixelCanvas />
     </div>
   );
 }
