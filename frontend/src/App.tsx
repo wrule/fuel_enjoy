@@ -68,17 +68,16 @@ export default function Home() {
   };
 
   return (
-    <div style={styles.root}>
-      <div style={styles.container}>
+    <div>
+      <div>
         {isConnected ? (
           <>
-            <h3 style={styles.label}>Counter</h3>
-            <div style={styles.counter}>
+            <h3>Counter</h3>
+            <div>
               {counter ?? 0}
             </div>
             <button
             onClick={onIncrementPressed}
-            style={styles.button}
             >
               Increment Counter
             </button>
@@ -88,7 +87,6 @@ export default function Home() {
           onClick={() => {
             connect();
           }}
-          style={styles.button}
           >
             {isConnecting ? 'Connecting' : 'Connect'}
           </button>
@@ -96,39 +94,4 @@ export default function Home() {
       </div>
     </div>
   );
-}
-
-const styles = {
-  root: {
-    display: 'grid',
-    placeItems: 'center',
-    height: '100vh',
-    width: '100vw',
-    backgroundColor: "black",
-  } as React.CSSProperties,
-  container: {
-    color: "#ffffffec",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  } as React.CSSProperties,
-  label: {
-    fontSize: "28px",
-  },
-  counter: {
-    color: "#a0a0a0",
-    fontSize: "48px",
-  },
-  button: {
-    borderRadius: "8px",
-    marginTop: "24px",
-    backgroundColor: "#707070",
-    fontSize: "16px",
-    color: "#ffffffec",
-    border: "none",
-    outline: "none",
-    height: "60px",
-    padding: "0 1rem",
-    cursor: "pointer"
-  },
 }
