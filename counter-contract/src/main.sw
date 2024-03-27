@@ -10,6 +10,8 @@ abi Counter {
 
   #[storage(read)]
   fn count() -> u64;
+
+  fn which_is_max(num1: u64, num2: u64) -> u64;
 }
 
 impl Counter for Contract {
@@ -22,5 +24,13 @@ impl Counter for Contract {
   fn increment() {
     let incremented = storage.counter.read() + 1;
     storage.counter.write(incremented);
+  }
+
+  fn which_is_max(num1: u64, num2: u64) -> u64 {
+    if (num1 > num2) {
+      return num1;
+    } else {
+      return num2;
+    }
   }
 }
