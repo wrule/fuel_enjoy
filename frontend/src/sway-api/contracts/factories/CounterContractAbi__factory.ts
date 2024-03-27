@@ -65,6 +65,16 @@ const _abi = {
       ]
     },
     {
+      "inputs": [],
+      "name": "loop_always",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": null
+    },
+    {
       "inputs": [
         {
           "name": "num1",

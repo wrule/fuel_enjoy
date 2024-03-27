@@ -24,15 +24,18 @@ interface CounterContractAbiInterface extends Interface {
   functions: {
     count: FunctionFragment;
     increment: FunctionFragment;
+    loop_always: FunctionFragment;
     which_is_max: FunctionFragment;
   };
 
   encodeFunctionData(functionFragment: 'count', values: []): Uint8Array;
   encodeFunctionData(functionFragment: 'increment', values: []): Uint8Array;
+  encodeFunctionData(functionFragment: 'loop_always', values: []): Uint8Array;
   encodeFunctionData(functionFragment: 'which_is_max', values: [BigNumberish, BigNumberish]): Uint8Array;
 
   decodeFunctionData(functionFragment: 'count', data: BytesLike): DecodedValue;
   decodeFunctionData(functionFragment: 'increment', data: BytesLike): DecodedValue;
+  decodeFunctionData(functionFragment: 'loop_always', data: BytesLike): DecodedValue;
   decodeFunctionData(functionFragment: 'which_is_max', data: BytesLike): DecodedValue;
 }
 
@@ -41,6 +44,7 @@ export class CounterContractAbi extends Contract {
   functions: {
     count: InvokeFunction<[], BN>;
     increment: InvokeFunction<[], void>;
+    loop_always: InvokeFunction<[], void>;
     which_is_max: InvokeFunction<[num1: BigNumberish, num2: BigNumberish], BN>;
   };
 }
