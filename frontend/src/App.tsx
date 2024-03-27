@@ -54,7 +54,7 @@ export default function Home() {
   const whichIsMax = async (counterContract: CounterContractAbi) => {
     try{
       const { value } = await counterContract.functions
-        .which_is_max('100', '999')
+        .which_is_max(322, 28)
         .txParams({
           gasPrice: 1,
           gasLimit: 100_000,
