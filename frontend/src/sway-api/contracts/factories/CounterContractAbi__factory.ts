@@ -63,6 +63,27 @@ const _abi = {
           ]
         }
       ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "num1",
+          "type": 1,
+          "typeArguments": null
+        },
+        {
+          "name": "num2",
+          "type": 1,
+          "typeArguments": null
+        }
+      ],
+      "name": "which_is_max",
+      "output": {
+        "name": "",
+        "type": 1,
+        "typeArguments": null
+      },
+      "attributes": null
     }
   ],
   "loggedTypes": [],
