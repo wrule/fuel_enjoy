@@ -11,7 +11,7 @@ import type { CounterContractAbi } from "./sway-api";
 import { PixelCanvas } from "./components/PixelCanvas";
 
 const CONTRACT_ID =
-  "0x80edb0b8111d4236d269d0fd1950f432646dea2c8ea1d8535e3041cbb6bbb4e9";
+  "0x856efab70b5d14269927dc5c99ee72f288fc3d97740a9d0b77b303fadcba57ee";
 
 export default function Home() {
   const [contract, setContract] = useState<CounterContractAbi>();
@@ -27,6 +27,7 @@ export default function Home() {
     async function getInitialCount(){
       if(isConnected && wallet){
         const counterContract = CounterContractAbi__factory.connect(CONTRACT_ID, wallet);
+        whichIsMax(counterContract);
         await getCount(counterContract);
         setContract(counterContract);
       }
@@ -45,6 +46,21 @@ export default function Home() {
       })
       .simulate();
       setCounter(value.toNumber());
+    } catch(error) {
+      console.error(error);
+    }
+  }
+
+  const whichIsMax = async (counterContract: CounterContractAbi) => {
+    try{
+      const { value } = await counterContract.functions
+        .which_is_max('100', '999')
+        .txParams({
+          gasPrice: 1,
+          gasLimit: 100_000,
+        })
+        .simulate();
+      console.log(1234, value.toNumber());
     } catch(error) {
       console.error(error);
     }
