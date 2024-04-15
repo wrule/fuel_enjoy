@@ -2,6 +2,7 @@ contract;
 
 storage {
   counter: u64 = 0,
+  isTest: u64 = 123286,
 }
 
 abi Counter {
