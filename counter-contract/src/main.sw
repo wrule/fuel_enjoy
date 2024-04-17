@@ -15,6 +15,8 @@ abi Counter {
   fn which_is_max(num1: u64, num2: u64) -> u64;
 
   fn loop_always();
+
+  fn test_num() -> u32;
 }
 
 impl Counter for Contract {
@@ -41,5 +43,9 @@ impl Counter for Contract {
     while (true) {
 
     }
+  }
+
+  fn test_num() -> u32 {
+    return 123445;
   }
 }
