@@ -46,6 +46,6 @@ impl Counter for Contract {
   }
 
   fn test_num() -> u32 {
-    return 123445;
+    return 43227;
   }
 }
