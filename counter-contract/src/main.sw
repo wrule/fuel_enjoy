@@ -3,6 +3,7 @@ contract;
 storage {
   counter: u64 = 0,
   isTest: u64 = 123286,
+  isAbc: bool = false,
 }
 
 abi Counter {
@@ -11,6 +12,9 @@ abi Counter {
 
   #[storage(read)]
   fn count() -> u64;
+
+  #[storage(read)]
+  fn abc() -> u64;
 
   fn which_is_max(num1: u64, num2: u64) -> u64;
 
@@ -23,6 +27,15 @@ impl Counter for Contract {
   #[storage(read)]
   fn count() -> u64 {
     storage.counter.read()
+  }
+
+  #[storage(read)]
+  fn abc() -> u64 {
+    if (storage.isAbc.read()) {
+      return 726;
+    } else {
+      return 2279;
+    }
   }
 
   #[storage(read, write)]
