@@ -4,6 +4,7 @@ storage {
   counter: u64 = 0,
   isTest: u64 = 123286,
   isAbc: bool = false,
+  mgNum: u128 = 0,
 }
 
 abi Counter {
@@ -12,6 +13,9 @@ abi Counter {
 
   #[storage(read)]
   fn count() -> u64;
+
+  #[storage(read)]
+  fn count() -> u128;
 
   #[storage(read)]
   fn abc() -> u64;
@@ -27,6 +31,11 @@ impl Counter for Contract {
   #[storage(read)]
   fn count() -> u64 {
     storage.counter.read()
+  }
+
+  #[storage(read)]
+  fn count() -> u128 {
+    storage.mgNum.read()
   }
 
   #[storage(read)]
