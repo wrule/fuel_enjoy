@@ -41,9 +41,9 @@ impl Counter for Contract {
   #[storage(read)]
   fn abc() -> u64 {
     if (storage.isAbc.read()) {
-      return 726;
+      return 7261;
     } else {
-      return 2279;
+      return 2239;
     }
   }
 
