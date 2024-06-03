@@ -21,6 +21,7 @@ abi Counter {
   fn abc() -> u64;
 
   fn which_is_max(num1: u64, num2: u64) -> u64;
+  fn which_is_min(num1: u64, num2: u64) -> u64;
 
   fn loop_always();
 
@@ -55,6 +56,14 @@ impl Counter for Contract {
 
   fn which_is_max(num1: u64, num2: u64) -> u64 {
     if (num1 > num2) {
+      return num1;
+    } else {
+      return num2;
+    }
+  }
+
+  fn which_is_min(num1: u64, num2: u64) -> u64 {
+    if (num1 < num2) {
       return num1;
     } else {
       return num2;
